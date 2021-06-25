@@ -1,7 +1,7 @@
 package com.company;
 
 public abstract class Personnage {
-    //c'est ca qui fait un joueur nn ?
+
     protected int end;
     protected int force;
     protected int pV;
@@ -9,6 +9,15 @@ public abstract class Personnage {
     public Personnage(int end, int force) {
         this.end = end;
         this.force = force;
+        if (end<5){
+            this.pV = end - 1;
+        }else if(end<10){
+            this.pV = end;
+        }else if(end<15){
+            this.pV = end + 1;
+        }else {
+            this.pV = end + 2;
+        }
     }
 
     public void frappe(){
@@ -24,7 +33,6 @@ public abstract class Personnage {
     }
 
     public int getpV() {
-        System.out.println("");
         return pV;
     }
 }
