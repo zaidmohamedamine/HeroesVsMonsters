@@ -24,6 +24,7 @@ public abstract class Personnage {
     }
 
     public int getpV() {
+        System.out.println("");
         return pV;
     }
 }
