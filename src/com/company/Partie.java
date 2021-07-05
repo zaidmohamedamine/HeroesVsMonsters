@@ -6,7 +6,6 @@ public class Partie {
 
     Scanner sc;
     Personnage perso;
-    De de;
 
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_RESET = "\u001B[0m";
@@ -28,15 +27,25 @@ public class Partie {
         return sc.nextLine();
     }
 
-    public void creationPersonnage(String race){
+    public void creationHero(String race){
 
         switch (race){
-            case "humain" : perso = new Humain(De.plusieursLances(De.lancer(6), De.lancer(6), De.lancer(6), De.lancer(6)),
-                    De.plusieursLances(De.lancer(6), De.lancer(6), De.lancer(6), De.lancer(6)));
+            case "humain" : perso = new Humain();
                     break;
-            case "nain" : perso = new Nain(De.plusieursLances(De.lancer(6), De.lancer(6), De.lancer(6), De.lancer(6)),
-                    De.plusieursLances(De.lancer(6), De.lancer(6), De.lancer(6), De.lancer(6)));
+            case "nain" : perso = new Nain();
                     break;
+            default :
+                System.out.println(ANSI_RED + "Veuillez entrer un nom de race valide entre 'humain' et 'nain'. " + ANSI_RESET);
+                creationHero(choixDeRace());
         }
+    }
+
+    public void creationListeMonstre(){
+        Plateau plateau = new Plateau();
+        int compteur =0;
+        do {
+            plateau.ajouterMonstre(plateau.generationMonstres());
+            compteur++;
+        }while (compteur<20);
     }
 }

@@ -1,7 +1,15 @@
 package com.company;
 
-public class Orque extends Monstre{
-    public Orque(int end, int force) {
-        super(end, force);
+public class Orque extends Monstre implements Or{
+
+    private int or;
+
+    public Orque() {
+        super();
+    }
+
+    @Override
+    public int getOr() {
+        return this.or;
     }
 }

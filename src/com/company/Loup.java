@@ -1,7 +1,16 @@
 package com.company;
 
-public class Loup extends Monstre{
-    public Loup(int end, int force) {
-        super(end, force);
+public class Loup extends Monstre implements Cuir{
+
+    private int cuir;
+
+    public Loup() {
+        super();
+        this.force++;
+    }
+
+    @Override
+    public int getCuir() {
+        return this.cuir;
     }
 }

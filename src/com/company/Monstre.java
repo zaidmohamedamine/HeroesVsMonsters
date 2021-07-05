@@ -1,8 +1,12 @@
 package com.company;
 
-public abstract class Monstre extends Personnage{
+public abstract class Monstre extends Personnage {
 
-    public Monstre(int end, int force) {
-        super(end, force);
+    public Monstre() {
+        super();
+        x = (int) (Math.random() * (14 + 1));
+        y = (int) (Math.random() * (14 + 1));
     }
+
+
 }

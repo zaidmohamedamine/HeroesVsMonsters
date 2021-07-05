@@ -3,11 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface Sac {
+public class Sac {
 
-    List<Matériau> inventaire = new ArrayList<>();
+    List<Loot> inventaire = new ArrayList<>();
 
-    public void ajouterDansInventaire();
+    public void ajouterDansInventaire(Loot loot) {
+        inventaire.add(loot);
+    }
 
 
 }

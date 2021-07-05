@@ -5,10 +5,16 @@ public abstract class Personnage {
     protected int end;
     protected int force;
     protected int pV;
+    protected int x;
+    protected int y;
 
-    public Personnage(int end, int force) {
-        this.end = end;
-        this.force = force;
+    public Personnage() {
+        this.end = De.lancer(6,4);
+        this.force = De.lancer(6,4);
+        caracteristiquesPersonnage(end, force);
+    }
+
+    public void caracteristiquesPersonnage(int end, int force){
         if (end<5){
             this.pV = end - 1;
         }else if(end<10){
